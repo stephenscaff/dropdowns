@@ -1,6 +1,7 @@
 /**
  * Dropdowns
- * Dropdown component used for Activity Filters
+ * A stupid simple dropdown thing.
+ * @author stephen scaff
  */
 const Dropdowns = (() => {
 
