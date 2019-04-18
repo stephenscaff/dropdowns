@@ -1,0 +1,117 @@
+//----------------------------------------------
+// Vars
+//----------------------------------------------
+$mq-med: 54em;
+$pad-sm: 2em;
+$pad-xs: 1em;
+$font-sm: 0.7em;
+$color-dark: #333;
+$color-alpha: #E04403;
+
+//----------------------------------------------
+//  Dropdowns
+//----------------------------------------------
+.dropdown {
+  position: relative;
+
+  &__label {
+    position: relative;
+    display: block;
+    @include font-uppercase($font-weight: 700);
+    text-align: left;
+    color: $color-dark;
+    transition: color 0.5s ease;
+
+    &:hover, .is-open & {
+      color: $color-alpha;
+    }
+
+    // caret
+    span {
+      position: relative;
+      top: 50%;
+      transform:translateY(-50%);
+      right: -1em;
+      width: 0;
+      height: 0;
+      font-family: 'iconfont';
+
+      &:after {
+        content: "\e911";
+        display: inline-block;
+        transition: transform 0.4s ease;
+
+        .is-open &, .is-opening &{
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &:hover {
+      color: $color-alpha;
+    }
+  }
+
+  &__main {
+    position: relative;
+    top: 2em;
+
+    @media (min-width: $mq-med) {
+      opacity: 0;
+      display: none;
+    }
+    @media (max-width: $mq-med) {
+      animation: none !important;
+    }
+
+    .dropdown.is-open & {
+      display: block;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      animation: fade-in 0.6s ease both;
+    }
+
+    .dropdown.is-closed & {
+      opacity: 0;
+      animation: fade-out 0.6s ease both;
+    }
+  }
+
+  &__modal {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 12em);
+    padding: $pad-sm;
+    background: #fff;
+    border: 1px solid #fff;
+    overflow: hidden;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+
+    @media (min-width: $mq-med) {
+      position: absolute;
+      right: 0;
+      width: 29em;
+      margin-right: -2em;
+    }
+  }
+
+  &__scroller {
+    height: 100%;
+    width: 108%;
+    padding-right: 8%;
+    overflow-y: scroll;
+  }
+}
+
+//----------------------------------------------
+// Keyframe Animations
+//----------------------------------------------
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-out {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
