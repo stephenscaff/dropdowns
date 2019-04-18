@@ -86,7 +86,6 @@ const Dropdowns = (() => {
     /**
      * Close Outside
      * Closed active drop if clicking outside of it.
-     * Only fire above 54ems (not mobile)
      */
     closeOutside() {
 

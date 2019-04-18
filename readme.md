@@ -24,6 +24,9 @@ Dropdowns.init()
 
 ## Structure
 
+Dropdown elements should be named `js-dropdown`
+Dropdown triggers should be name `js-dropdown-trigger`
+
 ```
 <div class="dropdown js-dropdown">
   <button class="dropdown__label js-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false">
@@ -38,3 +41,4 @@ Dropdowns.init()
     </div>
   </nav>
 </div>
+```
