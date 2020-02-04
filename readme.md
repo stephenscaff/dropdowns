@@ -7,7 +7,7 @@ Basic dropdown script in vanilla es6 js.
 - Transitions via simple css keyframes
 - Click outside Dropdown to close
 - Close on Esc key
-- Basic boiler scss included, though it's just ripped out of a project, so toates untested brah. Have fun.
+- Basic boiler scss included, though it's just ripped out of a project, so toates untested brah. Should be good. Have fun.
 
 
 ## Usage
